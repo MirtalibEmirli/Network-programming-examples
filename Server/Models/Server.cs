@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Server.Models;
 
-public  class Server1
+public class Server1
 {
     private TcpListener tcpListener { get; set; }
     public Server1()
@@ -16,7 +16,7 @@ public  class Server1
         StartServer();
     }
 
-    private   void StartServer()
+    private void StartServer()
     {
         try
         {
@@ -48,19 +48,19 @@ public  class Server1
                 Console.WriteLine("Accepted");
                 client.Close();
             });
-            thread.Start();    
-               
-               
+            thread.Start();
 
 
-            
+
+
+
         }
         catch (Exception ex)
         {
 
             Console.WriteLine(ex.Message);
         }
-      
+
 
 
 

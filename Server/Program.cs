@@ -28,13 +28,21 @@ while (true)
 //CREATING SERVER CLASS
 
 //TcpClient sınıfı doğrudan bir IPEndPoint ile başlatılamaz.
-try
-{
-    
-var server = new Server1();
+//try
+//{
 
-}
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-} 
+//var server = new Server1();
+
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine(ex.Message);
+//} 
+
+var ip = IPAddress.Parse("192.168.1.105");
+var port = 27001;
+var ep =new   IPEndPoint(ip, port);
+var socket = new Socket(AddressFamily.InterNetwork,SocketType.Dgram,ProtocolType.Udp);
+
+socket.Bind(ep);
+EndPoint endPoint = new IPEndPoint(IPAddress.Any, 0);
